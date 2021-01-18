@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named model_push
+
+# Build rule for target.
+model_push: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 model_push
+.PHONY : model_push
+
+# fast build rule for target.
+model_push/fast:
+	$(MAKE) -f CMakeFiles/model_push.dir/build.make CMakeFiles/model_push.dir/build
+.PHONY : model_push/fast
+
+#=============================================================================
 # Target rules for targets named hello_world
 
 # Build rule for target.
@@ -150,6 +163,33 @@ hello_world.cc.s:
 	$(MAKE) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello_world.cc.s
 .PHONY : hello_world.cc.s
 
+model_push.o: model_push.cc.o
+
+.PHONY : model_push.o
+
+# target to build an object file
+model_push.cc.o:
+	$(MAKE) -f CMakeFiles/model_push.dir/build.make CMakeFiles/model_push.dir/model_push.cc.o
+.PHONY : model_push.cc.o
+
+model_push.i: model_push.cc.i
+
+.PHONY : model_push.i
+
+# target to preprocess a source file
+model_push.cc.i:
+	$(MAKE) -f CMakeFiles/model_push.dir/build.make CMakeFiles/model_push.dir/model_push.cc.i
+.PHONY : model_push.cc.i
+
+model_push.s: model_push.cc.s
+
+.PHONY : model_push.s
+
+# target to generate assembly for a file
+model_push.cc.s:
+	$(MAKE) -f CMakeFiles/model_push.dir/build.make CMakeFiles/model_push.dir/model_push.cc.s
+.PHONY : model_push.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... model_push"
 	@echo "... hello_world"
 	@echo "... hello_world.o"
 	@echo "... hello_world.i"
 	@echo "... hello_world.s"
+	@echo "... model_push.o"
+	@echo "... model_push.i"
+	@echo "... model_push.s"
 .PHONY : help
 
 
