@@ -1,0 +1,3 @@
+/home/nick*/ProofOfConcept/src/build/CMakeFiles/rebuild_cache.dir
+/home/nick*/ProofOfConcept/src/build/CMakeFiles/edit_cache.dir
+/home/nick*/ProofOfConcept/src/build/CMakeFiles/model_push.dir
