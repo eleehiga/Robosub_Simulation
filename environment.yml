@@ -1,0 +1,7 @@
+name: RoboSubML-2020-Tensorflow
+dependencies:
+  - python=3.7
+  - tensorflow-gpu
+  - pip:
+    - empy
+    - catkin-pkg
