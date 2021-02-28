@@ -8,10 +8,8 @@ RUN wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_6
 RUN sha256sum /tmp/Anaconda3-2020.02-Linux-x86_64.sh
 RUN bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh -b -p
 RUN ln -s ~/anaconda3/bin/conda /usr/bin/conda
-#RUN conda create --name RoboSubML-2020-Tensorflow tensorflow-gpu python=3.7 
-#RUN conda init bash
 COPY environment.yml /setup/environment.yml
 RUN conda env create -f /setup/environment.yml
-RUN conda run -n RoboSubML-2020-Tensorflow python -V
-#RUN conda activate RoboSubML-2020-Tensorflow
-RUN curl -sSL http://get.gazebosim.org | sh 
+SHELL ["conda", "run", "-n", "RoboSubML-2020-Tensorflow", "/bin/bash", "-c"]
+RUN apt install gnupg gnupg2 gnupg1 -y
+RUN curl -sSL http://get.gazebosim.org | sh
