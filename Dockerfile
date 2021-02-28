@@ -12,4 +12,5 @@ COPY environment.yml /setup/environment.yml
 RUN conda env create -f /setup/environment.yml
 SHELL ["conda", "run", "-n", "RoboSubML-2020-Tensorflow", "/bin/bash", "-c"]
 RUN apt install gnupg gnupg2 gnupg1 -y
+# installing Gazebo takes a VERY long time
 RUN curl -sSL http://get.gazebosim.org | sh
