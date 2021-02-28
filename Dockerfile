@@ -14,3 +14,12 @@ SHELL ["conda", "run", "-n", "RoboSubML-2020-Tensorflow", "/bin/bash", "-c"]
 RUN apt install gnupg gnupg2 gnupg1 -y
 # installing Gazebo takes a VERY long time
 RUN curl -sSL http://get.gazebosim.org | sh
+RUN rm /etc/apt/sources.list
+COPY sources.list /etc/apt/sources.list
+RUN apt-get update && apt-get install -y lsb-release && apt-get clean all
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+RUN curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | apt-key add -
+RUN apt update
+RUN apt install ros-noetic-desktop-full
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
