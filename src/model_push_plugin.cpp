@@ -54,9 +54,9 @@ void ModelPushPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 
     // This sets gazebo msg publisher
     node = transport::NodePtr(new transport::Node());
-    node->Init(_parent->GetWorld()->GetName());
+    node->Init(_parent->GetWorld()->Name());
 
-    model_push = ModelPush(name, _parent);
+    modelPush = ModelPush("model_push", _parent);
 
 
     // Set up Update to be called every simulation update
@@ -72,7 +72,7 @@ void ModelPushPlugin::Update()
     /*
      * Add link forces to the frame from each model_push.
      */
-    model_push.addLinkForce();
+    modelPush.addLinkForce();
 }
 
 GZ_REGISTER_MODEL_PLUGIN(ModelPushPlugin)

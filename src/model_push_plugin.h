@@ -50,4 +50,4 @@ private:
     void UpdateModelPush();
 };
 }
-#endif MODEL_PUSH_PLUGIN_H
+#endif //MODEL_PUSH_PLUGIN_H

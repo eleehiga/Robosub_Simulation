@@ -12,12 +12,12 @@ using std::string;
 using namespace gazebo;
 
 /**
- * Thruster model abstraction class.
+ * model_push abstraction class.
  */
 class ModelPush
 {
 public:
-    ModelPush(const string name, physics::ModelPtr parent);
+    ModelPush(string name, physics::ModelPtr parent) : _name(name), _link_ptr(parent->GetLink(name)), _frame(parent->GetLink("frame")) {}
 
     void addLinkForce();
   //  msgs::Visual getVisualizationMessage();
@@ -40,7 +40,7 @@ private:
     /*
      * The name of the thruster.
      */
-    const string _name;
+    string _name;
 
     /*
      * A link pointer to the thruster model element.
@@ -76,4 +76,4 @@ private:
     const double _surface_z;
     */
 };
-#endif //THRUSTER_H
+#endif //MODEL_PUSH_H

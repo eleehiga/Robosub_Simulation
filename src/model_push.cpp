@@ -7,12 +7,7 @@
  * @param link_ptr A pointer to the thruster link element.
  * @param parent The parent model pointer.
  */
-ModelPush::ModelPush(const string name, physics::ModelPtr parent):
-{
-  _name = name;
-  _link_ptr = parent->GetLink(name);
-  _frame = parent->GetLink("frame");
-}
+ModelPush::ModelPush(string name, physics::ModelPtr parent) {}
 
 /**
  * Apply link forces to the frame model for the thruster.
