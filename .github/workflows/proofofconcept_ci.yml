@@ -31,6 +31,8 @@ jobs:
         #- run: git clone https://github.com/GU-RoboSub-Machine-Learning/ProofOfConcept.git
       - run: cd ProofOfConcept
         #- run: git checkout ci_and_docker
+      - run: ls
+      - run: more CMakeLists.txt
       - run: cmake CMakeLists.txt ProofOfConcept
       - run: make
       - run: source devel/setup.bash
