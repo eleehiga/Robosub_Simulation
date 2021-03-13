@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: docker pull ehiga/proofofconcept
-      - run: docker run -it proofofconcept bash
+      - run: docker run proofofconcept bash
       - run: cd home
       - run: git clone https://github.com/GU-RoboSub-Machine-Learning/ProofOfConcept.git
       - run: cd ProofOfConcept
