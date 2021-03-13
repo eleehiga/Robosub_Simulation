@@ -26,9 +26,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - run: gazebo --verbose
       - run: cd ProofOfConcept
-      - run: cmake CMakeLists.txt ProofOfConcept
-        #- run: cmake . -DCMAKE_INSTALL_PREFIX=./install -DCATKIN_DEVEL_PREFIX=./devel
+        #- run: cmake CMakeLists.txt ProofOfConcept -CMAKE_PREFIX_PATH=/opt/ros/noetic
+      - run: cmake . -DCMAKE_INSTALL_PREFIX=./install -DCATKIN_DEVEL_PREFIX=./devel -CMAKE_PREFIX_PATH=/opt/ros/noetic
       - run: make
       - run: source devel/setup.bash
