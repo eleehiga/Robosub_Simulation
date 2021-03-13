@@ -28,9 +28,9 @@ jobs:
       - run: docker run ehiga/proofofconcept bash
       - run: sudo apt install git -y
         #- run: cd home
-      - run: git clone https://github.com/GU-RoboSub-Machine-Learning/ProofOfConcept.git
+        #- run: git clone https://github.com/GU-RoboSub-Machine-Learning/ProofOfConcept.git
       - run: cd ProofOfConcept
-      - run: git checkout ci_and_docker
+        #- run: git checkout ci_and_docker
       - run: cmake CMakeLists.txt ProofOfConcept
       - run: make
       - run: source devel/setup.bash
