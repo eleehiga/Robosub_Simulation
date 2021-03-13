@@ -5,40 +5,40 @@
 ## See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
 ## newer versions of Lubuntu.
 deb http://archive.ubuntu.com/ubuntu/ focal main restricted
-deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted #
 
 ## Major bug fix updates produced after the final release of Lubuntu.
 ## Have you noticed a regression? Please report it!
 ## https://wiki.ubuntu.com/StableReleaseUpdates#Regressions
 deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted
-deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted #
 
 ## Software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu team.
 ## Also, please note that software in Universe WILL NOT receive any review or
 ## updates from the Ubuntu security team directly. Updates in this repository
 ## are provided by volunteers, but most come from Debian.
 deb http://archive.ubuntu.com/ubuntu/ focal universe
-deb-src http://archive.ubuntu.com/ubuntu/ focal universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal universe #
 deb http://archive.ubuntu.com/ubuntu/ focal-updates universe
-deb-src http://archive.ubuntu.com/ubuntu/ focal-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates universe #
 
 ## Software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu team,
 ## and may not be under a free licence. Please satisfy yourself as your rights
 ## to use the software. Also, please note that software in Multiverse WILL NOT
 ## receive any review or updates from the Ubuntu security team directly.
 deb http://archive.ubuntu.com/ubuntu/ focal multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ focal multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal multiverse #
 deb http://archive.ubuntu.com/ubuntu/ focal-updates multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ focal-updates multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ focal-updates multiverse #
 
 ## Software from this repository contains tested security updates from the
 ## Ubuntu security team.
 deb http://security.ubuntu.com/ubuntu focal-security main restricted
-deb-src http://security.ubuntu.com/ubuntu focal-security main restricted
+deb-src http://security.ubuntu.com/ubuntu focal-security main restricted #
 deb http://security.ubuntu.com/ubuntu focal-security universe
-deb-src http://security.ubuntu.com/ubuntu focal-security universe
+deb-src http://security.ubuntu.com/ubuntu focal-security universe #
 deb http://security.ubuntu.com/ubuntu focal-security multiverse
-deb-src http://security.ubuntu.com/ubuntu focal-security multiverse
+deb-src http://security.ubuntu.com/ubuntu focal-security multiverse #
 
 ## Software from this repository may not have been tested as extensively as
 ## software contained in the main release, although it includes newer versions
