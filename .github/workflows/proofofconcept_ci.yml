@@ -30,4 +30,5 @@ jobs:
         #- run: cmake CMakeLists.txt ProofOfConcept -CMAKE_PREFIX_PATH=/opt/ros/noetic
       - run: cmake . -DCMAKE_INSTALL_PREFIX=./install -DCATKIN_DEVEL_PREFIX=./devel -DCMAKE_PREFIX_PATH=/opt/ros/noetic
       - run: make
-      - run: source devel/setup.bash
+        #- run: source devel/setup.bash
+      - run: /bin/bash -c "source devel/setup.bash"
