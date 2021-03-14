@@ -28,6 +28,6 @@ jobs:
       - uses: actions/checkout@v2
       - run: cd ProofOfConcept
         #- run: cmake CMakeLists.txt ProofOfConcept -CMAKE_PREFIX_PATH=/opt/ros/noetic
-      - run: cmake . -DCMAKE_INSTALL_PREFIX=./install -DCATKIN_DEVEL_PREFIX=./devel -CMAKE_PREFIX_PATH=/opt/ros/noetic
+      - run: cmake . -DCMAKE_INSTALL_PREFIX=./install -DCATKIN_DEVEL_PREFIX=./devel -DCMAKE_PREFIX_PATH=/opt/ros/noetic
       - run: make
       - run: source devel/setup.bash
