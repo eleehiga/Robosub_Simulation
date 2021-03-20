@@ -76,4 +76,5 @@ private:
     const double _surface_z;
     */
 };
+
 #endif //MODEL_PUSH_H
