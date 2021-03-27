@@ -17,7 +17,20 @@ using namespace gazebo;
 class ModelPush
 {
 public:
-    ModelPush(string name, physics::ModelPtr parent) : _name(name), _link_ptr(parent->GetLink(name)), _frame(parent->GetLink("frame")) {}
+   /**
+    * Constructor.
+    *
+    * @param name The name of the thruster.
+    * @param link_ptr A pointer to the thruster link element.
+    * @param parent The parent model pointer.
+    */
+    ModelPush(string name, physics::ModelPtr parent){
+	_name = name;
+	_link_ptr = parent->GetLink(name);
+	_frame = parent->GetLink("frame");
+    }
+    ModelPush() {}
+    ~ModelPush() {}
 
     void addLinkForce();
   //  msgs::Visual getVisualizationMessage();

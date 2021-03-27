@@ -44,10 +44,6 @@ namespace gazebo
 namespace gazebo
 {
 
-ModelPushPlugin::ModelPushPlugin() { }
-
-ModelPushPlugin::~ModelPushPlugin() { }
-
 void ModelPushPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
 {
     ROS_INFO("Initializing model_push plugin.");

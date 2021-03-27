@@ -30,8 +30,8 @@ namespace gazebo
 class ModelPushPlugin : public ModelPlugin
 {
 public:
-    ModelPushPlugin();
-    ~ModelPushPlugin();
+    ModelPushPlugin() {}
+    ~ModelPushPlugin() {}
     void Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf);
     virtual void Update();
 
