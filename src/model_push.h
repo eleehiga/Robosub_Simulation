@@ -7,6 +7,12 @@
 #include <gazebo/common/common.hh>
 #include <gazebo/rendering/rendering.hh>
 #include <ignition/math.hh>
+#include <typeinfo>
+
+#include <ros/ros.h>
+#include <ros/callback_queue.h>
+#include <ros/advertise_options.h>
+#include <std_msgs/String.h>
 
 using std::string;
 using namespace gazebo;
@@ -25,14 +31,43 @@ public:
     * @param parent The parent model pointer.
     */
     ModelPush(string name, physics::ModelPtr parent){
+	std::cout<<"---------------------NAME BEING INTIALIZED-------------------------"<<std::endl;
 	_name = name;
+	ROS_INFO("_name is ");
+	std::cout<<_name<<std::endl;
+	ROS_INFO("name is ");
+	std::cout<<name<<std::endl;
+	std::cout<<"---------------------NAME INTIALIZED-------------------------"<<std::endl;
+	std::cout<<"---------------------_link_ptr BEING INTIALIZED-------------------------"<<std::endl;
 	_link_ptr = parent->GetLink(name);
-	_frame = parent->GetLink("frame");
+	std::cout<<"---------------------_link_ptr INTIALIZED-------------------------"<<std::endl;
+	std::cout<<"_link_ptr is: "<<_link_ptr<<std::endl;
+	std::cout<<"---------------------_frame BEING INTIALIZED-------------------------"<<std::endl;
+	std::cout<<"????????????????????????????????????????"<<std::endl;
+        physics::Link_V links = parent->GetLinks();
+	std::cout<<"????????????????????????????????????????"<<std::endl;
+        std::cout<<"PRINTING LINKS"<<std::endl;
+	std::cout<<"????????????????????????????????????????"<<std::endl;
+        for(auto const& link : links)
+          std::cout<<link->GetName()<<std::endl;
+	std::cout<<"????????????????????????????????????????"<<std::endl;
+	_frame = parent->GetLink("link");
+	std::cout<<"????????????????????????????????????????"<<std::endl;
+	std::cout<<"---------------------_frame INTIALIZED-------------------------"<<std::endl;
+	std::cout<<"_frame is: "<<_frame<<std::endl;
     }
     ModelPush() {}
     ~ModelPush() {}
 
     void addLinkForce();
+
+    string get_name();
+    
+
+    physics::LinkPtr get_LinkPtr();
+    
+
+    physics::LinkPtr get_Frame();
   //  msgs::Visual getVisualizationMessage();
 
 private:
