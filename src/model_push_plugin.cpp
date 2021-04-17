@@ -54,28 +54,11 @@ void ModelPushPlugin::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
     ROS_INFO("Initializing model_push plugin.");
 
     // This sets gazebo msg publisher
-    std::cout<<"help "<<_parent->GetName()<<std::endl;
-    std::cout<<"help "<< _parent->GetWorld()->Name()<<std::endl;
     _parent->GetWorld()->PrintEntityTree();
     node = transport::NodePtr(new transport::Node());
     node->Init(_parent->GetWorld()->Name());
     physics::Link_V links = _parent->GetLinks();
-    std::cout<<"PRINTING LINKS"<<std::endl;
-    for(auto const& link : links)
-      std::cout<<link->GetName()<<std::endl;
-    ROS_INFO("parent get link of name is ");
-    std::cout<<_parent->GetLink("link")<<std::endl;
-    std::cout<<_parent->GetWorld()->Name()<<std::endl;
-    std::cout<<"_parent is: "<<_parent<<std::endl;
-    std::cout<<"---------------------MODEL BEING INITIALIZED---------------------"<<std::endl;
     modelPush = ModelPush("link", _parent);
-    std::cout<<"---------------------MODEL INITIALIZED---------------------"<<std::endl;
-    ROS_INFO("ModelPush.get_name(): ");
-    std::cout<<modelPush.get_name()<<std::endl;
-    ROS_INFO("ModelPush.get_LinkPtr(): ");
-    std::cout<<typeid(modelPush.get_LinkPtr()).name()<<std::endl;
-    ROS_INFO("ModelPush.get_Frame(): ");
-    std::cout<<typeid(modelPush.get_Frame()).name()<<std::endl;
 
     // Set up Update to be called every simulation update
     // (which is frequently)
