@@ -25,13 +25,13 @@
 namespace gazebo
 {
 /**
- * ModelPushPlugin for Gazebo.
+ * ThrusterPlugin for Gazebo.
  */
-class ModelPushPlugin : public ModelPlugin
+class ThrusterPlugin : public ModelPlugin
 {
 public:
-    ModelPushPlugin() {}
-    ~ModelPushPlugin() {}
+    ThrusterPlugin() {}
+    ~ThrusterPlugin() {}
     void Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf);
     virtual void Update();
 
@@ -39,16 +39,16 @@ private:
     // gazebo plugin objects
     event::ConnectionPtr updateConnection;
 
-    // ModelPush objects
-    ModelPush modelPush;
-    vector<ModelPush> thrusters;
+    // Thruster objects
+    Thruster modelPush;
+    vector<Thruster> thrusters;
 
     // gazebo messaging objects
     transport::PublisherPtr vis_pub;
     transport::NodePtr node;
     ros::Time last_update_time;
 
-    void UpdateModelPush();
+    void UpdateThruster();
 };
 }
 #endif //MODEL_PUSH_PLUGIN_H

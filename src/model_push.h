@@ -36,6 +36,8 @@ public:
 	_link_ptr = parent->GetLink(name);
         physics::Link_V links = parent->GetLinks();
 	_frame = parent->GetLink("link");
+	_current_force(0, 0, 0);
+	_force_diff(0, 0, 0);
     }
     ModelPush() {}
     ~ModelPush() {}
@@ -55,17 +57,13 @@ private:
     /*
      * The current force (in Newtons) exerted by the thruster.
      */
-    /* Unnecessary
-    double _current_force;
-    */
-    /*
-     * The maximum force (in Newtons) that the thruster may exert in either
+    ignition::math::Vector3<double> _current_force;
+    ignition::math::Vector3<double> _force_diff;
+    double _cur_percent;
+     /* The maximum force (in Newtons) that the thruster may exert in either
      * direction.
      */
-    /* Unnecessary
     const double _max_force;
-    */
-
     /*
      * The name of the thruster.
      */

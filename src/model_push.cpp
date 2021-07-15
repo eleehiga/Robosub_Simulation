@@ -7,6 +7,7 @@
  */
 void ModelPush::addLinkForce()
 {
+  force = _link_ptr->RelativePose().Rot() * force;
   _link_ptr->AddLinkForce(ignition::math::Vector3<double>(1000.0, -400.0, 2443.0), _link_ptr->RelativePose().Pos());
 }
 
