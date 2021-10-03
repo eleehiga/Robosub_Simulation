@@ -8,7 +8,7 @@
 void ModelPush::addLinkForce()
 {
   std::cout<<"-------------------FORCE BEING ADDED-----------------------"<<std::endl;
-  _link_ptr->AddLinkForce(ignition::math::Vector3<double>(1000.0, -400.0, 2443.0), _link_ptr->RelativePose().Pos());
+  _link_ptr->AddLinkForce(ignition::math::Vector3<double>(10, -10, 10), _link_ptr->RelativePose().Pos());
   std::cout<<"-------------------FORCE ADDED-----------------------"<<std::endl;
 }
 

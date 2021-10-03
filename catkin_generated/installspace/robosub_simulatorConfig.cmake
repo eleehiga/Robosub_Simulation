@@ -67,8 +67,8 @@ set(robosub_simulator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(robosub_simulator_SOURCE_PREFIX /home/toast/Documents/RoboSub/Machine_Learning_2020-2021/ProofOfConcept)
-  set(robosub_simulator_DEVEL_PREFIX /home/toast/Documents/RoboSub/Machine_Learning_2020-2021/ProofOfConcept/devel)
+  set(robosub_simulator_SOURCE_PREFIX /home/toast/Documents/RoboSub/ProofOfConcept)
+  set(robosub_simulator_DEVEL_PREFIX /home/toast/Documents/RoboSub/ProofOfConcept/devel)
   set(robosub_simulator_INSTALL_PREFIX "")
   set(robosub_simulator_PREFIX ${robosub_simulator_DEVEL_PREFIX})
 else()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /usr/local/lib;/opt/ros/noetic/lib)
+    foreach(path /usr/local/lib;/home/toast/Documents/RoboSub/Machine_Learning_2020-2021/ProofOfConcept/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

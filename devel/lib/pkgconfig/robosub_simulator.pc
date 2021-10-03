@@ -1,4 +1,4 @@
-prefix=/home/toast/Documents/RoboSub/Machine_Learning_2020-2021/ProofOfConcept/devel
+prefix=/home/toast/Documents/RoboSub/ProofOfConcept/devel
 
 Name: robosub_simulator
 Description: Description of robosub_simulator
