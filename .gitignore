@@ -41,6 +41,9 @@ qtcreator-*
 
 *~
 
+# ignore vs code files
+.vscode
+
 # Emacs
 .#*
 
