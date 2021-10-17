@@ -41,6 +41,9 @@ qtcreator-*
 
 *~
 
+# ignore vs code files
+.vscode
+
 # Emacs
 .#*
 
@@ -60,6 +63,6 @@ test_results/
 CTestCustom.cmake
 *.ini
 atomic_configure/
-catkin_generated/
-catkin/
+#catkin_generated/
+#catkin/
 

@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/toast/Documents/RoboSub/Machine_Learning_2020-2021/ProofOfConcept/devel -DCMAKE_INSTALL_PREFIX=/home/toast/Documents/RoboSub/Machine_Learning_2020-2021/ProofOfConcept/install -G Unix Makefiles

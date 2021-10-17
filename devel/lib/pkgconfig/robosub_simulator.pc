@@ -1,0 +1,8 @@
+prefix=/home/toast/Documents/RoboSub/ProofOfConcept/devel
+
+Name: robosub_simulator
+Description: Description of robosub_simulator
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: gazebo_ros gazebo_plugins roscpp

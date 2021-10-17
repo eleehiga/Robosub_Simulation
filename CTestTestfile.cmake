@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/nick*/ProofOfConcept
-# Build directory: /home/nick*/ProofOfConcept
+# Source directory: /home/toast/Documents/RoboSub/ProofOfConcept
+# Build directory: /home/toast/Documents/RoboSub/ProofOfConcept
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
