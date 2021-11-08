@@ -4,29 +4,29 @@
 
     <!-- Ground Plane -->
     <include>
-      <uri>model://ground_plane</uri>
+	    <uri>model://ground_plane</uri>
     </include>
 
     <include>
-      <uri>model://sun</uri>
+	    <uri>model://sun</uri>
     </include>
 
     <include>
-	<uri>model://cube_model</uri>
-	<name>cube1</name>
-	<pose>0 0 1</pose>
+	    <uri>model://cube_model</uri>
+	    <name>cube1</name>
+	    <pose>0 0 1</pose>
     </include>
     
     <include>
-	<uri>model://cube_model</uri>
-	<name>cube2</name>
-	<pose>1 0 0</pose>
+	    <uri>model://cube_model</uri>
+	    <name>cube2</name>
+	    <pose>1 0 0</pose>
     </include>
     
     <include>
-	<uri>model://cube_model</uri>
-	<name>cube3</name>
-	<pose>0 1 0</pose>
+	    <uri>model://cube_model</uri>
+	    <name>cube3</name>
+	    <pose>0 1 0</pose>
     </include>
            
  

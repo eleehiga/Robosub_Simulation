@@ -32,7 +32,7 @@
       </visual>
     </link>
     <plugin name="BuoyancyPlugin" filename="libBuoyancyPlugin.so">
-      <fluid_density>1000<fluid_density>
+	<fluid_density>1000</fluid_density>
     </plugin>
     <plugin name="model_push" filename="libmodel_push.so"/>
   </model>
