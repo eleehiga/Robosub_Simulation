@@ -5,7 +5,7 @@
     <static>false</static>
     <link name="link">
       <inertial>
-        <mass>1.0</mass>
+        <mass>1000.0</mass>
         <inertia> <!-- inertias are tricky to compute -->
           <!-- http://gazebosim.org/tutorials?tut=inertia&cat=build_robot -->
           <ixx>0.083</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
@@ -31,6 +31,9 @@
         </geometry>
       </visual>
     </link>
+    <plugin name="BuoyancyPlugin" filename="libBuoyancyPlugin.so">
+	<fluid_density>1000</fluid_density>
+    </plugin>
     <plugin name="model_push" filename="libmodel_push.so"/>
   </model>
 </sdf>
