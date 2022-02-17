@@ -1,4 +1,4 @@
-#include "realsense_gazebo_plugin/gazebo_ros_realsense.h"
+#include "gazebo_ros_realsense.h"
 #include <sensor_msgs/fill_image.h>
 
 namespace

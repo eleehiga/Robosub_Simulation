@@ -11,11 +11,13 @@
       <uri>model://sun</uri>
     </include>
 
-    <include>
+    <!--include>
 	<uri>model://cube_model</uri>
+    </include-->
+
+    <include>
+         <uri>model://realsense_camera</uri>
     </include>
-           
- 
      
   </world>
 </sdf>

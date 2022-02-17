@@ -15,11 +15,17 @@ find_package(catkin REQUIRED
 	gazebo_msgs
 	std_msgs
 	message_generation
+	image_transport
+	camera_info_manager
+	sensor_msgs
+	cv_bridge
+	rostest
 	)
 
 ## Find gazebo macros and libraries
+find_package(Boost REQUIRED COMPONENTS thread)
 find_package(gazebo REQUIRED)
-
+find_package(Threads REQUIRED)
 
 ## find system dependencies with the following (this is BOOST related)
 # find_package(Boost REQUIRED COMPONENTS system)
