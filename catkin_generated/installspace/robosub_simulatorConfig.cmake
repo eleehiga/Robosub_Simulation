@@ -67,8 +67,8 @@ set(robosub_simulator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(robosub_simulator_SOURCE_PREFIX /Robosub_Simulation)
-  set(robosub_simulator_DEVEL_PREFIX /Robosub_Simulation/devel)
+  set(robosub_simulator_SOURCE_PREFIX /home/toast/Documents/RoboSub/ProofOfConcept)
+  set(robosub_simulator_DEVEL_PREFIX /home/toast/Documents/RoboSub/ProofOfConcept/devel)
   set(robosub_simulator_INSTALL_PREFIX "")
   set(robosub_simulator_PREFIX ${robosub_simulator_DEVEL_PREFIX})
 else()
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(robosub_simulator_LIBRARIES ${robosub_simulator_LIBRARIES})
 
   _list_append_unique(robosub_simulator_LIBRARY_DIRS ${${robosub_simulator_dep}_LIBRARY_DIRS})
-  list(APPEND robosub_simulator_EXPORTED_TARGETS ${${robosub_simulator_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(robosub_simulator_EXPORTED_TARGETS ${${robosub_simulator_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")
