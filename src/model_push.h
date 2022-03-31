@@ -13,6 +13,13 @@
 #include <ros/callback_queue.h>
 #include <ros/advertise_options.h>
 #include <std_msgs/String.h>
+#include <sensor_msgs/JointState.h>
+#include <math.h>
+#include <ros/ros.h>
+#include <ros/subscribe_options.h>
+#include <boost/thread.hpp>
+#include <boost/algorithm/string.hpp>
+#include <sensor_msgs/JointState.h>
 
 using std::string;
 using namespace gazebo;
@@ -61,6 +68,7 @@ public:
 
     void addLinkForce();
     void addSubscribeForce();
+    static void SetJointStates(const sensor_msgs::JointState::ConstPtr);
 
     string get_name();
     
@@ -70,6 +78,8 @@ public:
 
     physics::LinkPtr get_Frame();
   //  msgs::Visual getVisualizationMessage();
+
+    
 
 private:
     /*

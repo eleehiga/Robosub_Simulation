@@ -1,6 +1,13 @@
 #include "model_push.h"
 #include <ros/ros.h>
 #include <ros/subscribe_options.h>
+#include <sensor_msgs/JointState.h>
+#include <math.h>
+#include <ros/ros.h>
+#include <ros/subscribe_options.h>
+#include <boost/thread.hpp>
+#include <boost/algorithm/string.hpp>
+#include <sensor_msgs/JointState.h>
 
 /**
  * Apply link forces to the frame model for the thruster.
@@ -16,14 +23,11 @@ void ModelPush::addLinkForce()
 
 void ModelPush::addSubscribeForce()
 {
-	ros::init(argc, argv, "pub_joint_command_test");
+	// ros::init("talker");
 
 	ros::NodeHandle* rosnode = new ros::NodeHandle();
-	ros::SubscribeOptions jointStatesSo =
-	ros::SubscribeOptions::create<sensor_msgs::JointState>(
-	"/test", 1, SetJointStates,
-	ros::VoidPtr(), rosnode->getCallbackQueue());
-	ros::Subscriber subJointState = rosnode->subscribe(joinStatesSo);
+	ros::SubscribeOptions jointStatesSo = ros::SubscribeOptions::create<sensor_msgs::JointState>("/test", 1, SetJointStates,ros::VoidPtr(), rosnode->getCallbackQueue());
+	ros::Subscriber subJointState = rosnode->subscribe(jointStatesSo);
 	ros::spin();
 }
 
@@ -40,4 +44,12 @@ physics::LinkPtr ModelPush::get_LinkPtr()
 physics::LinkPtr ModelPush::get_Frame()
 {
   return _frame;
+}
+
+static void SetJointStates(const sensor_msgs::JointState::ConstPtr &_js)
+{
+  static ros::Time startTime = ros::Time::now();
+  {
+    std::cout<<"AYo"<<std::endl;
+  }
 }

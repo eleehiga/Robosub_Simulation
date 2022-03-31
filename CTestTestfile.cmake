@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /Robosub_Simulation
-# Build directory: /Robosub_Simulation
+# Source directory: /home/toast/Documents/RoboSub/ProofOfConcept
+# Build directory: /home/toast/Documents/RoboSub/ProofOfConcept
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
