@@ -1,4 +1,6 @@
 #include "model_push.h"
+#include <ros/ros.h>
+#include <ros/subscribe_options.h>
 
 /**
  * Apply link forces to the frame model for the thruster.
@@ -10,6 +12,19 @@ void ModelPush::addLinkForce()
   std::cout<<"-------------------FORCE BEING ADDED-----------------------"<<std::endl;
   _link_ptr->AddLinkForce(ignition::math::Vector3<double>(10, -10, 10), _link_ptr->RelativePose().Pos());
   std::cout<<"-------------------FORCE ADDED-----------------------"<<std::endl;
+}
+
+void ModelPush::addSubscribeForce()
+{
+	ros::init(argc, argv, "pub_joint_command_test");
+
+	ros::NodeHandle* rosnode = new ros::NodeHandle();
+	ros::SubscribeOptions jointStatesSo =
+	ros::SubscribeOptions::create<sensor_msgs::JointState>(
+	"/test", 1, SetJointStates,
+	ros::VoidPtr(), rosnode->getCallbackQueue());
+	ros::Subscriber subJointState = rosnode->subscribe(joinStatesSo);
+	ros::spin();
 }
 
 string ModelPush::get_name()

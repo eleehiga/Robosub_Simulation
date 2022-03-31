@@ -90,7 +90,8 @@ void ModelPushPlugin::Update()
     /*
      * Add link forces to the frame from each model_push.
      */
-    modelPush.addLinkForce();
+    //modelPush.addLinkForce();
+    modelPush.addSubscribeForce();
 }
 
 GZ_REGISTER_MODEL_PLUGIN(ModelPushPlugin)

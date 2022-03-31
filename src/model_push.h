@@ -60,6 +60,7 @@ public:
     ~ModelPush() {}
 
     void addLinkForce();
+    void addSubscribeForce();
 
     string get_name();
     
