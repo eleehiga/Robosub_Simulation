@@ -1,4 +1,4 @@
-prefix=/home/toast/Documents/RoboSub/ProofOfConcept/devel
+prefix=/Robosub_Simulation/devel
 
 Name: robosub_simulator
 Description: Description of robosub_simulator

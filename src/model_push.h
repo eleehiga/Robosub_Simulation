@@ -68,7 +68,7 @@ public:
 
     void addLinkForce();
     void addSubscribeForce();
-    static void SetJointStates(const sensor_msgs::JointState::ConstPtr);
+    static void SetJointStates(const sensor_msgs::JointState::ConstPtr &_js);
 
     string get_name();
     

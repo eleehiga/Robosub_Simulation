@@ -46,7 +46,7 @@ physics::LinkPtr ModelPush::get_Frame()
   return _frame;
 }
 
-static void SetJointStates(const sensor_msgs::JointState::ConstPtr &_js)
+void ModelPush::SetJointStates(const sensor_msgs::JointState::ConstPtr &_js)
 {
   static ros::Time startTime = ros::Time::now();
   {
