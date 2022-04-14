@@ -24,11 +24,13 @@ void ModelPush::addLinkForce()
 void ModelPush::addSubscribeForce()
 {
 	// ros::init("talker");
-
 	ros::NodeHandle* rosnode = new ros::NodeHandle();
 	ros::SubscribeOptions jointStatesSo = ros::SubscribeOptions::create<sensor_msgs::JointState>("/test", 1, SetJointStates,ros::VoidPtr(), rosnode->getCallbackQueue());
 	ros::Subscriber subJointState = rosnode->subscribe(jointStatesSo);
-	ros::spin();
+	ros::AsyncSpinner spinner(boost::thread::hardware_concurrency());
+	ros::Rate r(10);
+
+	spinner.start();
 }
 
 string ModelPush::get_name()
