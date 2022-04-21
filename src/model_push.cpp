@@ -25,12 +25,18 @@ void ModelPush::addSubscribeForce()
 {
 	// ros::init("talker");
 	ros::NodeHandle* rosnode = new ros::NodeHandle();
-	ros::SubscribeOptions jointStatesSo = ros::SubscribeOptions::create<sensor_msgs::JointState>("/test", 1, SetJointStates,ros::VoidPtr(), rosnode->getCallbackQueue());
-	ros::Subscriber subJointState = rosnode->subscribe(jointStatesSo);
+  ros::Subscriber sub_ = rosnode->subscribe("test", 10, &ModelPush::messageCallback, this);
+	// ros::SubscribeOptions jointStatesSo = ros::SubscribeOptions::create<sensor_msgs::JointState>("/test", 1, SetJointStates,ros::VoidPtr(), rosnode->getCallbackQueue());
+	// ros::Subscriber subJointState = rosnode->subscribe(jointStatesSo);
 	ros::AsyncSpinner spinner(boost::thread::hardware_concurrency());
 	ros::Rate r(10);
 
 	spinner.start();
+}
+
+void ModelPush::messageCallback(const string &msg)
+{
+  ros::ROS_INFO("message is %s", msg);
 }
 
 string ModelPush::get_name()
